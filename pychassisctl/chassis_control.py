@@ -134,7 +134,8 @@ class ChassisControlObject(DbusProperties, DbusObjectManager):
     def softReboot(self):
         print "Soft Rebooting"
         if self.getPowerState() == POWER_OFF:
-            self.powerOn()
+            #self.powerOn()
+	   print "PowerState is off, no any action"
         else:
             self.Set(DBUS_NAME, "reboot", 1)
             self.softPowerOff()
